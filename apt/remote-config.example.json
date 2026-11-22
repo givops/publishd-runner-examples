@@ -1,0 +1,21 @@
+{
+  "artifactRoot": "/srv/publishd/apt/staging",
+  "journalRoot": "/srv/publishd/apt/journal",
+  "projects": {
+    "sample-project": "sample-app"
+  },
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "test",
+      "channelId": "candidate",
+      "root": "/srv/publishd/apt/repository",
+      "distribution": "synthetic",
+      "component": "main",
+      "architecture": "amd64",
+      "resourceLock": "/srv/publishd/apt/repository.lock"
+    }
+  ]
+}

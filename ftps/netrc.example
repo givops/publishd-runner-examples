@@ -1,0 +1,5 @@
+# Install outside the repository at mode 0600, owned by the runner OS account.
+# Replace host, login, and password before production use.
+machine ftps.example.invalid
+  login publishd-deployer
+  password REPLACE_WITH_MOUNTED_FTPS_PASSWORD

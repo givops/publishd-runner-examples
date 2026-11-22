@@ -1,0 +1,32 @@
+publishd:
+  profiles:
+    ftps-edge:
+      revision: "1"
+      max-projects: 20000
+      publish:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/ftps/publish.py
+          - --config
+          - /etc/publishd/ftps-config.json
+        working-directory: /opt/publishd/ftps
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      inventory:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/ftps/inventory.py
+          - --config
+          - /etc/publishd/ftps-config.json
+        working-directory: /opt/publishd/ftps
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      servers:
+        edge:
+          channels:
+            stable:
+              resource-group: ftps-edge-repo

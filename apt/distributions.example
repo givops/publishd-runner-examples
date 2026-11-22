@@ -1,0 +1,4 @@
+Codename: synthetic
+Architectures: amd64
+Components: main
+Description: Synthetic disposable publication example

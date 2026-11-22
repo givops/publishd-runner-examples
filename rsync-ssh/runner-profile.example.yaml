@@ -1,0 +1,32 @@
+publishd:
+  profiles:
+    rsync-ssh:
+      revision: "1"
+      max-projects: 20000
+      publish:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/rsync-ssh/publish.py
+          - --config
+          - /etc/publishd/rsync-ssh.json
+        working-directory: /opt/publishd/rsync-ssh
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      inventory:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/rsync-ssh/inventory.py
+          - --config
+          - /etc/publishd/rsync-ssh.json
+        working-directory: /opt/publishd/rsync-ssh
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      servers:
+        test:
+          channels:
+            candidate:
+              resource-group: rsync-ssh-repository

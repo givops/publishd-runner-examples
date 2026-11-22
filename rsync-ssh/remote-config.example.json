@@ -1,0 +1,15 @@
+{
+  "artifactRoot": "/srv/publishd/rsync-repository/staging",
+  "journalRoot": "/srv/publishd/rsync-repository/journal",
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "test",
+      "channelId": "candidate",
+      "root": "/srv/publishd/rsync-repository/repository",
+      "resourceLock": "/srv/publishd/rsync-repository/repository.lock"
+    }
+  ]
+}

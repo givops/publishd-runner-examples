@@ -1,0 +1,15 @@
+{
+  "artifactRoot": "/var/lib/publishd/minimal/artifacts",
+  "journalRoot": "/var/lib/publishd/minimal/journal",
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "production",
+      "channelId": "stable",
+      "root": "/var/lib/publishd/minimal/destination",
+      "resourceLock": "/var/lib/publishd/minimal/repository.lock"
+    }
+  ]
+}

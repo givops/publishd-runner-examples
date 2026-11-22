@@ -1,0 +1,23 @@
+{
+  "artifactRoot": "/var/lib/publishd/ftps/artifacts",
+  "journalRoot": "/var/lib/publishd/ftps/journal",
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "edge",
+      "channelId": "stable",
+      "resourceLock": "/var/lib/publishd/ftps/repository.lock",
+      "ftps": {
+        "host": "ftps.example.invalid",
+        "port": 21,
+        "remoteRoot": "/pub/releases",
+        "netrcFile": "/etc/publishd/ftps.netrc",
+        "caFile": "/etc/publishd/ftps-ca.pem",
+        "passive": true,
+        "timeoutSeconds": 60
+      }
+    }
+  ]
+}

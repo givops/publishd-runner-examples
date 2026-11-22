@@ -1,0 +1,32 @@
+publishd:
+  profiles:
+    apt:
+      revision: "1"
+      max-projects: 20000
+      publish:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/apt/publish.py
+          - --config
+          - /etc/publishd/apt-config.json
+        working-directory: /opt/publishd/apt
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      inventory:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/apt/inventory.py
+          - --config
+          - /etc/publishd/apt-config.json
+        working-directory: /opt/publishd/apt
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      servers:
+        test:
+          channels:
+            candidate:
+              resource-group: apt-repository

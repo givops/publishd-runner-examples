@@ -1,0 +1,32 @@
+publishd:
+  profiles:
+    local:
+      revision: "1"
+      max-projects: 20000
+      publish:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/local-repository/publish.py
+          - --config
+          - /etc/publishd/local-config.json
+        working-directory: /opt/publishd/local-repository
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      inventory:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/local-repository/inventory.py
+          - --config
+          - /etc/publishd/local-config.json
+        working-directory: /opt/publishd/local-repository
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      servers:
+        test:
+          channels:
+            candidate:
+              resource-group: local-repository

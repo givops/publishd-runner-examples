@@ -1,0 +1,15 @@
+{
+  "artifactRoot": "/var/lib/publishd/local/artifacts",
+  "journalRoot": "/var/lib/publishd/local/journal",
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "test",
+      "channelId": "candidate",
+      "root": "/var/lib/publishd/local/destination",
+      "resourceLock": "/var/lib/publishd/local/repository.lock"
+    }
+  ]
+}

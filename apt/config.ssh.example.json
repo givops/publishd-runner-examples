@@ -1,0 +1,28 @@
+{
+  "artifactRoot": "/var/lib/publishd/apt/artifacts",
+  "journalRoot": "/var/lib/publishd/apt/journal",
+  "projects": {
+    "sample-project": "sample-app"
+  },
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "test",
+      "channelId": "candidate",
+      "distribution": "synthetic",
+      "component": "main",
+      "architecture": "amd64",
+      "resourceLock": "/var/lib/publishd/apt/repository.lock",
+      "ssh": {
+        "host": "publishd-repository",
+        "configFile": "/etc/publishd/ssh/config",
+        "stagingRoot": "/srv/publishd/apt/staging",
+        "publishScript": "/opt/publishd/apt/receive.py",
+        "inventoryScript": "/opt/publishd/apt/inventory.py",
+        "config": "/srv/publishd/apt/private-config.json"
+      }
+    }
+  ]
+}

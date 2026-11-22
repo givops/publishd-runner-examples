@@ -1,0 +1,34 @@
+# Merge this snippet into publishd-runner's private runtime configuration.
+# Increment `revision` whenever script code, arguments, config, or destinations change.
+publishd:
+  profiles:
+    minimal-custom:
+      revision: "1"
+      max-projects: 20000
+      publish:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/minimal-template/publish.py
+          - --config
+          - /etc/publishd/minimal-config.json
+        working-directory: /opt/publishd/minimal-template
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      inventory:
+        executable: /usr/bin/python3
+        arguments:
+          - -I
+          - /opt/publishd/minimal-template/inventory.py
+          - --config
+          - /etc/publishd/minimal-config.json
+        working-directory: /opt/publishd/minimal-template
+        environment:
+          LANG: C.UTF-8
+          PYTHONDONTWRITEBYTECODE: "1"
+      servers:
+        production:
+          channels:
+            stable:
+              resource-group: minimal-production-repo

@@ -1,0 +1,11 @@
+# Private SSH client configuration. Install mode 0600 and replace placeholders.
+Host publishd-repository
+    HostName repository.example.invalid
+    User publishd
+    Port 22
+    IdentityFile /etc/publishd/ssh/id_ed25519
+    IdentitiesOnly yes
+    UserKnownHostsFile /etc/publishd/ssh/known_hosts
+    StrictHostKeyChecking yes
+    BatchMode yes
+    ForwardAgent no

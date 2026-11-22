@@ -1,0 +1,22 @@
+{
+  "artifactRoot": "/var/lib/publishd/rsync/artifacts",
+  "journalRoot": "/var/lib/publishd/rsync/journal",
+  "destinations": [
+    {
+      "optionIds": [
+        "00000000-0000-0000-0000-000000000028"
+      ],
+      "serverId": "test",
+      "channelId": "candidate",
+      "resourceLock": "/var/lib/publishd/rsync/repository.lock",
+      "ssh": {
+        "host": "publishd-repository",
+        "configFile": "/etc/publishd/ssh/config",
+        "stagingRoot": "/srv/publishd/rsync-repository/staging",
+        "publishScript": "/opt/publishd/rsync-ssh/receive.py",
+        "inventoryScript": "/opt/publishd/rsync-ssh/inventory.py",
+        "config": "/srv/publishd/rsync-repository/private-config.json"
+      }
+    }
+  ]
+}
